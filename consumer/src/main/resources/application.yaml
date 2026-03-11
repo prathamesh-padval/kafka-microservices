@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: consumer
+  kafka:
+    topic: test
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: test-group
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        max.poll.records: 50
+        session.timeout.ms: 15000
+        heartbeat.interval.ms: 3000
+      listener:
+        ack-mode: manual
+        concurrency: 3
