@@ -100,7 +100,7 @@ services:
 
   producer:
     build:
-      context: ./producer
+      context: ./../services/producer
       dockerfile: Dockerfile
     container_name: producer
     networks:
@@ -116,7 +116,7 @@ services:
 
   consumer:
     build:
-      context: ./consumer
+      context: ./../services/consumer
       dockerfile: Dockerfile
     container_name: consumer
     networks:
